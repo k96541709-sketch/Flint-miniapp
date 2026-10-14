@@ -161,11 +161,11 @@
 
     <!-- Splash -->
     <div id="splash">
-        <img src="logo.jpg" alt="Flint" class="splash-logo">
+        <img src="logo.png" alt="Flint" class="splash-logo">
     </div>
 
     <!-- Логотип -->
-    <img src="logo.jpg" alt="FLINT" class="logo">
+    <img src="logo.png" alt="FLINT" class="logo">
 
     <!-- Приветствие -->
     <div class="greeting" id="greeting">Привет!</div>
@@ -220,10 +220,8 @@
         tg.ready();
         tg.expand();
 
-        // Язык (по умолчанию русский)
         let lang = 'ru';
 
-        // Тексты
         const TEXTS = {
             ru: {
                 greeting: 'Привет, {name}!',
@@ -279,7 +277,6 @@
             return TEXTS[lang][key] || key;
         }
 
-        // Приветствие
         const user = tg.initDataUnsafe?.user;
         const name = user?.first_name || '';
 
@@ -289,7 +286,6 @@
                 : t('greetingNoName');
         }
 
-        // Умная подборка
         function renderRecommendations() {
             const hour = new Date().getHours();
             let recs = [];
@@ -322,7 +318,6 @@
             });
         }
 
-        // Отрисовка всего
         function render() {
             renderGreeting();
             renderRecommendations();
@@ -341,12 +336,10 @@
 
         render();
 
-        // Splash
         setTimeout(() => {
             document.getElementById('splash').classList.add('hidden');
         }, 1500);
 
-        // Кнопки
         function openReferral() { tg.showAlert(t('refTitle')); }
         function openHistory() { tg.showAlert(t('histTitle')); }
         function goToDiscover() { tg.showAlert(t('navDiscover')); }
