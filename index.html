@@ -29,7 +29,8 @@
             position: fixed;
             top: 0; left: 0;
             width: 100%; height: 100%;
-            background: #0a0a0a;
+            background: url('background.jpg') no-repeat center center;
+            background-size: cover;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -40,10 +41,13 @@
             opacity: 0;
             pointer-events: none;
         }
-        #splash img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+        .splash-logo {
+            width: 200px;
+            animation: splashPulse 1.5s ease-in-out infinite;
+        }
+        @keyframes splashPulse {
+            0%, 100% { transform: scale(1); opacity: 0.9; }
+            50% { transform: scale(1.1); opacity: 1; }
         }
 
         /* Логотип */
@@ -157,7 +161,7 @@
 
     <!-- Splash -->
     <div id="splash">
-        <img src="start.jpg" alt="Flint">
+        <img src="logo.jpg" alt="Flint" class="splash-logo">
     </div>
 
     <!-- Логотип -->
